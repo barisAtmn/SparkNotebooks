@@ -1,3 +1,5 @@
+## Delta Lake Spark Notebook Commands
+
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
 
@@ -31,11 +33,8 @@ display(spark.sql("CREATE TABLE events USING DELTA LOCATION '/delta/events/'"))
 events_delta.count()
 
 ---------------------------------------------
-
-%sql
 Select * from events where date='2016-07-27'
 
-%sql
 describe detail events
 
 ---------------------------------------------
@@ -52,11 +51,8 @@ val historical_events = spark.read
 historical_events.write.format("delta").mode("append").partitionBy("date").save("/delta/events/")
 
 ---------------------------------------------
-
-%sql
 Select count(*) from events
 
-%sql
 DESCRIBE HISTORY events
 
 ---------------------------------------------
