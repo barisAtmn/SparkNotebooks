@@ -1,6 +1,6 @@
-DELTA LAKE
+# DELTA LAKE
 
-*  "CREATE TABLE {table name} USING DELTA LOCATION '{path}'"
+* "CREATE TABLE {table name} USING DELTA LOCATION '{path}'"
 * describe detail {table name}
 * describe history {table name}
 * DF.write.format("delta").mode("append").partitionBy("date").save("{path}")
